@@ -1,31 +1,36 @@
 <div class="container">
-
     <h1>{{relacija.nazivRelacije}}</h1>
-    
-    <h2>Stanice:</h2>
-    <ul>
-      <li *ngFor="let stanica of relacija.stanice">
-        {{stanica.stanicaId}} - {{stanica.nazivStanice}}
-      </li>
-    </ul>
   
-    <h2>Cene:</h2>
     <table>
       <thead>
         <tr>
-          <th>Stanica 1</th>
-          <th>Stanica 2</th>
-          <th>Cena</th>
+          <th></th>
+          <th *ngFor="let stanica of relacija.stanice" class="th-rotate">{{stanica.nazivStanice}}</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let cena of relacija.staniceCena">
-          <td>{{cena.stanica1RefId}}</td>
-          <td>{{cena.stanica2RefId}}</td>
-          <td>{{cena.cena}}</td>
-        </tr>
-      </tbody>
-    </table>
 
+      <tbody>
+        <ng-container *ngFor="let stanica1 of relacija.stanice; let i = index">
+          
+            <tr>
+                <td>{{stanica1.nazivStanice}}</td>
+                <td *ngFor="let stanica2 of relacija.stanice; let j = index" class="td-prices">
+                    <ng-container *ngIf="i === j"></ng-container>
+                    
+                    <ng-container *ngIf="i !== j">
+                       
+                        <ng-container *ngFor="let cena of relacija.staniceCena">
+                            <ng-container *ngIf="cena.stanica1RefId === stanica1.stanicaId && cena.stanica2RefId === stanica2.stanicaId">
+                            {{cena.cena}}
+                            </ng-container>
+                        </ng-container>
+                        
+                    </ng-container>
+                </td>
+            </tr>
+
+        </ng-container>
+      </tbody>
+
+    </table>
   </div>
-  
