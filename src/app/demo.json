@@ -1,0 +1,385 @@
+{
+    "nazivRelacije": "Novi Pazar - G. Milanovac - Beograd",
+    "stanice": [
+        {
+            "stanicaId": 39,
+            "nazivStanice": "NOVI PAZAR"
+        },
+        {
+            "stanicaId": 38,
+            "nazivStanice": "BATNJIK"
+        },
+        {
+            "stanicaId": 1,
+            "nazivStanice": "RAŠKA"
+        },
+        {
+            "stanicaId": 10,
+            "nazivStanice": "BRVENIK"
+        },
+        {
+            "stanicaId": 11,
+            "nazivStanice": "BALJEVAC"
+        },
+        {
+            "stanicaId": 12,
+            "nazivStanice": "BILJANOVAC"
+        },
+        {
+            "stanicaId": 37,
+            "nazivStanice": "UŠĆE"
+        },
+        {
+            "stanicaId": 36,
+            "nazivStanice": "KRALJEVO"
+        },
+        {
+            "stanicaId": 35,
+            "nazivStanice": "G.MILANOVAC"
+        },
+        {
+            "stanicaId": 34,
+            "nazivStanice": "RUDNIK"
+        },
+        {
+            "stanicaId": 33,
+            "nazivStanice": "LJIG"
+        },
+        {
+            "stanicaId": 32,
+            "nazivStanice": "BEOGRAD"
+        }
+    ],
+    "staniceCena": [
+        {
+            "stanica1RefId": 39,
+            "stanica2RefId": 32,
+            "cena": 1500.00
+        },
+        {
+            "stanica1RefId": 39,
+            "stanica2RefId": 33,
+            "cena": 950.00
+        },
+        {
+            "stanica1RefId": 39,
+            "stanica2RefId": 34,
+            "cena": 880.00
+        },
+        {
+            "stanica1RefId": 39,
+            "stanica2RefId": 35,
+            "cena": 850.00
+        },
+        {
+            "stanica1RefId": 39,
+            "stanica2RefId": 36,
+            "cena": 650.00
+        },
+        {
+            "stanica1RefId": 39,
+            "stanica2RefId": 37,
+            "cena": 500.00
+        },
+        {
+            "stanica1RefId": 39,
+            "stanica2RefId": 12,
+            "cena": 450.00
+        },
+        {
+            "stanica1RefId": 39,
+            "stanica2RefId": 11,
+            "cena": 430.00
+        },
+        {
+            "stanica1RefId": 39,
+            "stanica2RefId": 10,
+            "cena": 405.00
+        },
+        {
+            "stanica1RefId": 39,
+            "stanica2RefId": 1,
+            "cena": 250.00
+        },
+        {
+            "stanica1RefId": 39,
+            "stanica2RefId": 38,
+            "cena": 180.00
+        },
+        {
+            "stanica1RefId": 38,
+            "stanica2RefId": 32,
+            "cena": 1400.00
+        },
+        {
+            "stanica1RefId": 38,
+            "stanica2RefId": 33,
+            "cena": 930.00
+        },
+        {
+            "stanica1RefId": 38,
+            "stanica2RefId": 34,
+            "cena": 840.00
+        },
+        {
+            "stanica1RefId": 38,
+            "stanica2RefId": 35,
+            "cena": 810.00
+        },
+        {
+            "stanica1RefId": 38,
+            "stanica2RefId": 36,
+            "cena": 550.00
+        },
+        {
+            "stanica1RefId": 38,
+            "stanica2RefId": 37,
+            "cena": 430.00
+        },
+        {
+            "stanica1RefId": 38,
+            "stanica2RefId": 12,
+            "cena": 380.00
+        },
+        {
+            "stanica1RefId": 38,
+            "stanica2RefId": 11,
+            "cena": 360.00
+        },
+        {
+            "stanica1RefId": 38,
+            "stanica2RefId": 10,
+            "cena": 335.00
+        },
+        {
+            "stanica1RefId": 38,
+            "stanica2RefId": 1,
+            "cena": 180.00
+        },
+        {
+            "stanica1RefId": 1,
+            "stanica2RefId": 32,
+            "cena": 1300.00
+        },
+        {
+            "stanica1RefId": 1,
+            "stanica2RefId": 33,
+            "cena": 910.00
+        },
+        {
+            "stanica1RefId": 1,
+            "stanica2RefId": 34,
+            "cena": 820.00
+        },
+        {
+            "stanica1RefId": 1,
+            "stanica2RefId": 35,
+            "cena": 780.00
+        },
+        {
+            "stanica1RefId": 1,
+            "stanica2RefId": 36,
+            "cena": 480.00
+        },
+        {
+            "stanica1RefId": 1,
+            "stanica2RefId": 37,
+            "cena": 250.00
+        },
+        {
+            "stanica1RefId": 1,
+            "stanica2RefId": 12,
+            "cena": 200.00
+        },
+        {
+            "stanica1RefId": 1,
+            "stanica2RefId": 11,
+            "cena": 180.00
+        },
+        {
+            "stanica1RefId": 1,
+            "stanica2RefId": 10,
+            "cena": 155.00
+        },
+        {
+            "stanica1RefId": 10,
+            "stanica2RefId": 32,
+            "cena": 1150.00
+        },
+        {
+            "stanica1RefId": 10,
+            "stanica2RefId": 33,
+            "cena": 880.00
+        },
+        {
+            "stanica1RefId": 10,
+            "stanica2RefId": 34,
+            "cena": 790.00
+        },
+        {
+            "stanica1RefId": 10,
+            "stanica2RefId": 35,
+            "cena": 760.00
+        },
+        {
+            "stanica1RefId": 10,
+            "stanica2RefId": 36,
+            "cena": 420.00
+        },
+        {
+            "stanica1RefId": 10,
+            "stanica2RefId": 37,
+            "cena": 175.00
+        },
+        {
+            "stanica1RefId": 10,
+            "stanica2RefId": 12,
+            "cena": 130.00
+        },
+        {
+            "stanica1RefId": 10,
+            "stanica2RefId": 11,
+            "cena": 105.00
+        },
+        {
+            "stanica1RefId": 11,
+            "stanica2RefId": 32,
+            "cena": 1150.00
+        },
+        {
+            "stanica1RefId": 11,
+            "stanica2RefId": 33,
+            "cena": 850.00
+        },
+        {
+            "stanica1RefId": 11,
+            "stanica2RefId": 34,
+            "cena": 760.00
+        },
+        {
+            "stanica1RefId": 11,
+            "stanica2RefId": 35,
+            "cena": 730.00
+        },
+        {
+            "stanica1RefId": 11,
+            "stanica2RefId": 36,
+            "cena": 400.00
+        },
+        {
+            "stanica1RefId": 11,
+            "stanica2RefId": 37,
+            "cena": 160.00
+        },
+        {
+            "stanica1RefId": 11,
+            "stanica2RefId": 12,
+            "cena": 105.00
+        },
+        {
+            "stanica1RefId": 12,
+            "stanica2RefId": 32,
+            "cena": 1100.00
+        },
+        {
+            "stanica1RefId": 12,
+            "stanica2RefId": 33,
+            "cena": 850.00
+        },
+        {
+            "stanica1RefId": 12,
+            "stanica2RefId": 34,
+            "cena": 760.00
+        },
+        {
+            "stanica1RefId": 12,
+            "stanica2RefId": 35,
+            "cena": 730.00
+        },
+        {
+            "stanica1RefId": 12,
+            "stanica2RefId": 36,
+            "cena": 370.00
+        },
+        {
+            "stanica1RefId": 12,
+            "stanica2RefId": 37,
+            "cena": 125.00
+        },
+        {
+            "stanica1RefId": 37,
+            "stanica2RefId": 32,
+            "cena": 1050.00
+        },
+        {
+            "stanica1RefId": 37,
+            "stanica2RefId": 33,
+            "cena": 820.00
+        },
+        {
+            "stanica1RefId": 37,
+            "stanica2RefId": 34,
+            "cena": 730.00
+        },
+        {
+            "stanica1RefId": 37,
+            "stanica2RefId": 35,
+            "cena": 660.00
+        },
+        {
+            "stanica1RefId": 37,
+            "stanica2RefId": 36,
+            "cena": 300.00
+        },
+        {
+            "stanica1RefId": 36,
+            "stanica2RefId": 32,
+            "cena": 900.00
+        },
+        {
+            "stanica1RefId": 36,
+            "stanica2RefId": 33,
+            "cena": 650.00
+        },
+        {
+            "stanica1RefId": 36,
+            "stanica2RefId": 34,
+            "cena": 450.00
+        },
+        {
+            "stanica1RefId": 36,
+            "stanica2RefId": 35,
+            "cena": 370.00
+        },
+        {
+            "stanica1RefId": 35,
+            "stanica2RefId": 32,
+            "cena": 750.00
+        },
+        {
+            "stanica1RefId": 35,
+            "stanica2RefId": 33,
+            "cena": 280.00
+        },
+        {
+            "stanica1RefId": 35,
+            "stanica2RefId": 34,
+            "cena": 120.00
+        },
+        {
+            "stanica1RefId": 34,
+            "stanica2RefId": 32,
+            "cena": 700.00
+        },
+        {
+            "stanica1RefId": 34,
+            "stanica2RefId": 33,
+            "cena": 200.00
+        },
+        {
+            "stanica1RefId": 33,
+            "stanica2RefId": 32,
+            "cena": 530.00
+        }
+    ]
+}
