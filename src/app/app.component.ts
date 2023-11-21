@@ -97,12 +97,33 @@ export class AppComponent {
     for(let k=0;k<this.relacija.staniceCena.length;k++){
       if(this.relacija.staniceCena[k].stanica1RefId===polazak && this.relacija.staniceCena[k].stanica2RefId===odrediste || this.relacija.staniceCena[k].stanica2RefId===polazak && this.relacija.staniceCena[k].stanica1RefId===odrediste){
         let cena = this.relacija.staniceCena[k].cena;
-        this.searchedPrice=cena+" RSD";
-      }else if(polazak===odrediste){
-        this.searchedPrice="/";
+        this.searchedPrice="Cena: "+cena+" RSD";
       }
     }
   }
+  
+  public newState: Array<{ brojStanice: number; nazivStanice: string }> = [];
 
+onPolazakChange(prom: any) {
+  this.searchedPrice='';
+  this.newState.splice(0, this.newState.length);
+  let brojac = 0;
+  let polazak = parseInt(this.selectedPolazak, 10);
+
+  for (let i = 0; i < this.relacija.stanice.length; i++) {
+    this.newState.push({
+      brojStanice: this.relacija.stanice[i].stanicaId,
+      nazivStanice: this.relacija.stanice[i].nazivStanice,
+    });
+  }
+  while (this.relacija.stanice[brojac].stanicaId !== polazak){
+    brojac++;
+  }
+  for (let j = 0; j <= brojac; j++) {
+    this.newState.splice(0, 1);
+  }
+}
+
+  
   
 }
