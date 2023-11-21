@@ -25,6 +25,14 @@ interface Relacija {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  selectedPolazak: any;
+  selectedOdrediste: any;
+  searchedPrice: any;
+  rotateArrow: string='▽';
+  
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   relacija: Relacija = jsonData;
 
   priceForm: FormGroup;
@@ -65,6 +73,36 @@ export class AppComponent {
     }
   }
 
+  showFunction() {
+    let x: any = document.getElementById("myDIV");
+    if (x.style.visibility === "hidden") {
+      x.style.visibility='visible';
+      x.style.marginBottom='0px';
+      x.style.marginTop='20px';
+      this.rotateArrow='△';
+    } else {
+      x.style.visibility='hidden';
+      x.style.marginBottom='-150px';
+      this.rotateArrow='▽';
+    }
+  }
 
+  showPrice(){
+    console.log('Polazak: ', this.selectedPolazak,'Odredište: ', this.selectedOdrediste);
 
+    let polazak= parseInt(this.selectedPolazak,10);
+    let odrediste= parseInt(this.selectedOdrediste,10);
+    console.log('Polazak: ', polazak,'Odredište: ', odrediste);
+
+    for(let k=0;k<this.relacija.staniceCena.length;k++){
+      if(this.relacija.staniceCena[k].stanica1RefId===polazak && this.relacija.staniceCena[k].stanica2RefId===odrediste || this.relacija.staniceCena[k].stanica2RefId===polazak && this.relacija.staniceCena[k].stanica1RefId===odrediste){
+        let cena = this.relacija.staniceCena[k].cena;
+        this.searchedPrice=cena+" RSD";
+      }else if(polazak===odrediste){
+        this.searchedPrice="/";
+      }
+    }
+  }
+
+  
 }
