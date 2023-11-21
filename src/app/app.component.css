@@ -4,7 +4,9 @@
 table {
     border-collapse: collapse;
     width: 100%;
-    overflow: hidden;   
+    overflow: hidden; 
+    position: relative;
+    z-index: 100px;
 }
 th,td {
     border: 1px solid #dddddd;
@@ -21,6 +23,7 @@ th,td {
     height: 120px;
     writing-mode: vertical-lr;
     font-weight: 400;   
+    background-color: white;
 }
 h1{
     text-align: center;
@@ -36,6 +39,7 @@ h1{
 .td-title-col{
     text-align: right;
     border: 0;
+    background-color: white;
 }
 .td-prices:hover::before{ 
     background-color: whitesmoke;
@@ -74,7 +78,7 @@ h1{
     padding: 2px 10px;
     margin: 0px 10px;
 }
-select{
+.select-decimal{
     border: 0;
     box-shadow: 0px 0px 10px -5px black;
     height: 40px;
@@ -98,6 +102,9 @@ button{
     background-color: dodgerblue;
     color: white;
 }
+.h-change-prices-search{
+    margin: -10px -10px 0px 30px;
+}
 button:hover{
     background-color: rgb(20, 108, 195);
     color: white;
@@ -110,3 +117,58 @@ button:hover{
     font-size: 16px;
     background-color: rgba(255, 255, 255, 0);
 }
+.hide-show-div{
+    visibility: hidden;
+    margin-bottom: -150px;
+    transition: visibility 0.2s, margin-bottom 0.5s
+}
+.forms-head{
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+}
+.forms-head-left{
+    width: 25%;
+}
+.forms-head-right{
+    width: 75%;
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    align-items: top;
+}
+.dropdown{
+    cursor: pointer;
+}
+.dropdown-container {
+    display: flex;
+    flex-direction: row;
+
+}
+  .dropdown-container p{
+    margin-left: 30px;
+  }
+  .select-state {
+    padding: 8px;
+    font-size: 16px;
+    border: 0;
+    width: 150px;
+    box-shadow: 0px 0px 10px -5px black;
+    height: 40px;
+    font-size: 16px;
+    text-align: left;
+    padding: 4px;
+    margin: -10px 0px 0px 10px;
+  }
+  
+  p {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  #price {
+    font-weight: bold;
+  }
+  .p-messagge{
+    max-width: 30px;
+  }
