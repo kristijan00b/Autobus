@@ -1,89 +1,89 @@
 <div class="container" onload="changePrices()">
-    <h3 class="fake-link"><span>Relacije</span> / Pregled Cenovnika</h3>
-    <h1>{{relacija.nazivRelacije}}</h1>
+  <h3 class="fake-link"><span>Relacije</span> / Pregled Cenovnika</h3>
+  <h1>{{relacija.nazivRelacije}}</h1>
 
-  <div class="forms-head">
-    <div class="forms-head-left">
-      <form [formGroup]="priceForm" (ngSubmit)="changePrices()">
-        <div class="price-changer">
-          <button class="h-change-prices" (click)="showFunction()">Izmeni cene <span [(ngModel)]="rotateArrow">{{rotateArrow}}</span></button>
-          <div class="hide-show-div" id="myDIV" >
-              <div class="price-changer-top">
-                <label for="percent">Unesi procenat: </label>
-                <input class="input-head" type="number" name="percent" min="1" max="100" formControlName="percent" required=""> %
-              </div>
+<div class="forms-head">
+  <div class="forms-head-left">
+    <form [formGroup]="priceForm" (ngSubmit)="changePrices()">
+      <div class="price-changer">
+        <button class="h-change-prices" (click)="showFunction()">Izmeni cene <span [(ngModel)]="rotateArrow">{{rotateArrow}}</span></button>
+        <div class="hide-show-div" id="myDIV" >
+            <div class="price-changer-top">
+              <label for="percent">Unesi procenat: </label>
+              <input class="input-head" type="number" name="percent" min="1" max="100" formControlName="percent" required=""> %
+            </div>
 
-              <div class="price-changer-center">
-                <label for="decimal">Izaberi decimale: </label>
-                <select class="select-decimal" name="decimal" id="rounding" aria-placeholder="" formControlName="decimal">
-                  <option value="zero">0</option>
-                  <option value="five">5</option>
-                </select>
-              </div>
-
-              <div class="price-changer-bottom">
-                <button type="submit"> Promeni</button>
-              </div>
-          </div>   
-        </div>
-      </form>
-    </div>
-
-    <div class="forms-head-right">
-      <form action="">
-        <div class="dropdown-container">
-          <p>Polazak: </p>
-            <div class="dropdown">
-              <select class="select-state" id="dropdown1" name="ddown1" [(ngModel)]="selectedPolazak" >
-                <option value="{{stanica.stanicaId}}" *ngFor="let stanica of relacija.stanice; let i=index" >{{stanica.nazivStanice}}</option>
+            <div class="price-changer-center">
+              <label for="decimal">Izaberi decimale: </label>
+              <select class="select-decimal" name="decimal" id="rounding" aria-placeholder="" formControlName="decimal">
+                <option value="zero">0</option>
+                <option value="five">5</option>
               </select>
             </div>
-          <p> Odrediste: </p>
-            <div class="dropdown">
-              <select class="select-state" id="dropdown2" name="ddown2" [(ngModel)]="selectedOdrediste" >
-                <option value="{{stanica.stanicaId}}" *ngFor="let stanica of relacija.stanice; let j=index" >{{stanica.nazivStanice}}</option>
-              </select>
+
+            <div class="price-changer-bottom">
+              <button type="submit"> Promeni</button>
             </div>
-            <button class="h-change-prices-search" (click)="showPrice()" >Prikazi cenu</button>
-            <p>Cena: <span id="price">{{searchedPrice}}</span></p>
-        </div>
-      </form>
-    </div>
-
+        </div>   
+      </div>
+    </form>
   </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th *ngFor="let stanica of relacija.stanice" class="th-rotate">{{stanica.nazivStanice}}</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <ng-container *ngFor="let stanica1 of relacija.stanice; let i = index">
-            <tr>
-                <td class="td-title-col" [attr.colspan]="i+1">{{stanica1.nazivStanice}} </td>
-
-                <ng-container *ngFor="let stanica2 of relacija.stanice; let j = index" >
-                    <ng-container *ngIf="i !== j">
-                       
-                        <ng-container *ngFor="let cena of relacija.staniceCena">
-                            <ng-container *ngIf="cena.stanica1RefId === stanica1.stanicaId && cena.stanica2RefId === stanica2.stanicaId" >
-                            <td class="td-prices">
-                              <form action="" >
-                                <input class="td-prices-input" type="number" name="cenaInput" [(ngModel)]="cena.cena" (keydown.enter)="changePrice(i, j, cena.cena)">
-                                
-                              </form>
-                            </td>
-                            </ng-container>
-                        </ng-container>
-                          
-                    </ng-container>
-                </ng-container>
-            </tr>
-
-        </ng-container>
-      </tbody>
-
-    </table>
+  <div class="forms-head-right">
+    <form action="">
+      <div class="dropdown-container">
+        <p>Polazak: </p>
+          <div class="dropdown">
+            <select class="select-state" id="dropdown1" name="ddown1" [(ngModel)]="selectedPolazak" (ngModelChange)="onPolazakChange(selectedPolazak)">
+              <option value="{{stanica.stanicaId}}" *ngFor="let stanica of relacija.stanice; let i=index" >{{stanica.nazivStanice}}</option>
+            </select>
+          </div>
+        <p> Odrediste: </p>
+          <div class="dropdown">
+            <select class="select-state" id="dropdown2" name="ddown2" [(ngModel)]="selectedOdrediste" >
+              <option value="{{stanica.brojStanice}}" *ngFor="let stanica of newState; let j=index" >{{stanica.nazivStanice}}</option>
+            </select>
+          </div>
+          <button class="h-change-prices-search" (click)="showPrice()" >Prikazi cenu</button>
+          <p><span id="price">{{searchedPrice}}</span></p>
+      </div>
+    </form>
   </div>
+
+</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let stanica of relacija.stanice" class="th-rotate">{{stanica.nazivStanice}}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <ng-container *ngFor="let stanica1 of relacija.stanice; let i = index">
+          <tr>
+              <td class="td-title-col" [attr.colspan]="i+1">{{stanica1.nazivStanice}} </td>
+
+              <ng-container *ngFor="let stanica2 of relacija.stanice; let j = index" >
+                  <ng-container *ngIf="i !== j">
+                     
+                      <ng-container *ngFor="let cena of relacija.staniceCena">
+                          <ng-container *ngIf="cena.stanica1RefId === stanica1.stanicaId && cena.stanica2RefId === stanica2.stanicaId" >
+                          <td class="td-prices">
+                            <form action="" >
+                              <input class="td-prices-input" type="number" name="cenaInput" [(ngModel)]="cena.cena" (keydown.enter)="changePrice(i, j, cena.cena)">
+                              
+                            </form>
+                          </td>
+                          </ng-container>
+                      </ng-container>
+                        
+                  </ng-container>
+              </ng-container>
+          </tr>
+
+      </ng-container>
+    </tbody>
+
+  </table>
+</div>
