@@ -1,33 +1,56 @@
-<div class="container">
+<div class="container" onload="changePrices()">
     <h3 class="fake-link"><span>Relacije</span> / Pregled Cenovnika</h3>
     <h1>{{relacija.nazivRelacije}}</h1>
-  
+<form [formGroup]="priceForm" (ngSubmit)="changePrices()">
+  <div class="price-changer">
+    <h3 class="h3-changer">Izmeni cene</h3>
+    <div class="price-changer-top">
+      <label for="percent">Unesi procenat: </label>
+      <input class="input-head" type="number" name="percent" min="1" max="100" formControlName="percent" required=""> %
+    </div>
+
+    <div class="price-changer-center">
+      <label for="decimal">Izaberi decimale: </label>
+      <select name="decimal" id="rounding" aria-placeholder="" formControlName="decimal">
+        <option value="zero">0</option>
+        <option value="five">5</option>
+      </select>
+    </div>
+
+    <div class="price-changer-bottom">
+      <button type="submit"> Promeni</button>
+    </div>
+  </div>
+</form>
+
     <table>
       <thead>
         <tr>
-          <th></th>
           <th *ngFor="let stanica of relacija.stanice" class="th-rotate">{{stanica.nazivStanice}}</th>
         </tr>
       </thead>
 
       <tbody>
         <ng-container *ngFor="let stanica1 of relacija.stanice; let i = index">
-          
             <tr>
-                <td>{{stanica1.nazivStanice}}</td>
-                <td *ngFor="let stanica2 of relacija.stanice; let j = index" class="td-prices">
-                    <ng-container *ngIf="i === j"></ng-container>
-                    
+                <td class="td-title-col" [attr.colspan]="i+1">{{stanica1.nazivStanice}} </td>
+
+                <ng-container *ngFor="let stanica2 of relacija.stanice; let j = index" >
                     <ng-container *ngIf="i !== j">
                        
                         <ng-container *ngFor="let cena of relacija.staniceCena">
-                            <ng-container *ngIf="cena.stanica1RefId === stanica1.stanicaId && cena.stanica2RefId === stanica2.stanicaId">
-                            {{cena.cena}}
+                            <ng-container *ngIf="cena.stanica1RefId === stanica1.stanicaId && cena.stanica2RefId === stanica2.stanicaId" >
+                            <td class="td-prices">
+                              <form action="" >
+                                <input class="td-prices-input" type="number" name="cenaInput" [(ngModel)]="cena.cena" (keydown.enter)="changePrice(i, j, cena.cena)">
+                                
+                              </form>
+                            </td>
                             </ng-container>
                         </ng-container>
-                        
+                          
                     </ng-container>
-                </td>
+                </ng-container>
             </tr>
 
         </ng-container>
