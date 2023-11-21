@@ -4,7 +4,7 @@
 table {
     border-collapse: collapse;
     width: 100%;
-    overflow: hidden;
+    overflow: hidden;   
 }
 th,td {
     border: 1px solid #dddddd;
@@ -33,6 +33,10 @@ h1{
 .fake-link span{
     color: dodgerblue;
 }
+.td-title-col{
+    text-align: right;
+    border: 0;
+}
 .td-prices:hover::before{ 
     background-color: whitesmoke;
     content: '\00a0';  
@@ -55,4 +59,54 @@ h1{
 }
 .td-prices:hover{
     background-color: lightgoldenrodyellow;
+}
+.price-changer-top, .price-changer-bottom, .price-changer-center{
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.input-head{
+    border: 0;
+    box-shadow: 0px 0px 10px -5px black;
+    height: 40px;
+    width: 60px;
+    font-size: 16px;
+    text-align: right;
+    padding: 2px 10px;
+    margin: 0px 10px;
+}
+select{
+    border: 0;
+    box-shadow: 0px 0px 10px -5px black;
+    height: 40px;
+    width: 60px;
+    font-size: 16px;
+    text-align: center;
+    padding: 2px;
+    margin: 0px 10px;
+}
+.input-head::-webkit-outer-spin-button,
+.input-head::-webkit-inner-spin-button,
+.td-prices-input::-webkit-outer-spin-button,
+.td-prices-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+button{
+    border: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: dodgerblue;
+    color: white;
+}
+button:hover{
+    background-color: rgb(20, 108, 195);
+    color: white;
+    cursor: pointer;
+}
+.td-prices-input{
+    border: 0;
+    text-align: right;
+    width: 70px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0);
 }
